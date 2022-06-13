@@ -1,7 +1,7 @@
 package goarray
 
 type Element interface {
-	any
+	interface{}
 }
 
 type Array[T Element] struct {

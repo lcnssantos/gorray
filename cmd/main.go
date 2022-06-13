@@ -2,20 +2,16 @@ package main
 
 import (
 	"log"
-	"strings"
 
 	goarray "github.com/lcnssantos/gorray"
 )
 
 func main() {
-	data := goarray.New(&[]string{"A"})
+	data := goarray.New(&[]string{"Luciano", "Souza", "Santos"})
 
-	newArray := data.Concat(goarray.New(&[]string{"A"}), goarray.New(&[]string{"C"}))
-
-	log.Println(data)
-	result := newArray.Map(func(element string) interface{} {
-		return strings.ToLower(element)
+	element := data.Some(func(element string) bool {
+		return true
 	})
 
-	log.Println(result)
+	log.Println(element)
 }
